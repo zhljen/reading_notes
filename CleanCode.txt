@@ -1,0 +1,16 @@
+To be a better programmer.
+
+Chapter 1
+What's clean code?
+- Runs all the tests;
+- Contains no duplication;
+- Expresses all the design ideas that are in the system;
+- Minimizes the number of entities such as classes, methods, functions, and the like.
+
+Chapter 2
+Meaningful names
+-The name of a variable, function, or class, should answer why it exists, what it does, and how it is used. If a name requires a comment, then the name does not reveal its intent.
+- Avoid disinformation, have meaningful distinctions
+- The name should be pronounceable, searchable, and no encoding
+- No extra prefix to name member, separate interface and implementation
+- Use cs domain names and don't be cute
