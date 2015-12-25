@@ -14,3 +14,18 @@ Meaningful names
 - The name should be pronounceable, searchable, and no encoding
 - No extra prefix to name member, separate interface and implementation
 - Use cs domain names and don't be cute
+
+Chapter 3
+- Small, 30 lines of code
+- Easier to read easier to understand
+- Flag argument is bad
+- Have no side effects
+- Prefer exception than return error code
+
+Chapter 4
+- Comments do not make up for bad code
+- Good comments necessary and benefical
+- Warning, to do comments
+- Bad comments, mumbling, redundant, misleading
+- Noise
+
