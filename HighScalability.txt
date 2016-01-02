@@ -1,0 +1,24 @@
+Paper: Heracles: Improving Resource Efficiency At Scale
+http://highscalability.squarespace.com/blog/2015/6/4/paper-heracles-improving-resource-efficiency-at-scale.html
+Underutilization and segregation are the classic strategies for ensuring resources are available when work absolutely must get done.
+
+The problem: better utilization of compute resources while complying  service level objectives (SLOs) for latency-critical (LC) and best effort batch (BE) tasks:
+The solution:
+a) coordinated management of multiple isolation mechanisms is key to achieving high utilization without SLO violations; b) carefully separating interference into independent subproblems is effective at reducing the complexity of the dynamic control problem; and c) a local, real-time controller that monitors latency in each server is sufficient...Heracles manages 4 mechanisms to mitigate interference: core isolation, LLC isolation, power isolation, network traffic isolation.
+
+The Serverless Start-Up - Down With Servers!
+http://highscalability.squarespace.com/blog/2015/12/7/the-serverless-start-up-down-with-servers.html 
+- Why Servers Are Bad
+   -- First of all, you need to keep a minimum number of server instances alive to be able to serve any visitor, even if you don't have any traffic - or revenue. This costs money.
+   -- Secondly, because cloud instances run installed software on top of operating systems, you need not only maintain your own code, but also make sure the server software stays up to date and operational.
+   -- Third, you can't scale up or down in a granular way, but only one whole server at a time.
+
+Peecho Architecture - Scalability On A Shoestring
+- Expensive Stuff Does Not Scale
+- If you really want to be fast, short iterations are important
+- Architecture
+  -- The app runs on an EC2 auto-scaling group with a load balancer on top. It stores order data in SimpleDB.Everything static is run through the Cloudfront CDN
+  -- After payment has been confirmed, the print button checkout submits every order to a REST API.The order intake machine writes a ticket to the processing queue. Whenever there are enough tickets available, a new processing machine wakes up, gets a ticket and starts crunching that awful data.  When those big guns are done, they store the result in S3 and then kill themselves.
+  -- The files are taken out from s3 to print out.
+
+

@@ -1,0 +1,55 @@
+http://aosabook.org/en/index.html
+
+1. High performance networking in Chrome
+
+Speed, security, stability, simplicity
+performace: chrome works on a multip-process model with process and memory isolation and a tight security sandbox for each tab.
+            the execution of a web program has 3 tasks: fetch resources, page layout and rending, javascript exexcution
+
+Modern web application: the top 300k page characters: 1M in size, composed of 88 resources (images, javascript, css), connects to 15+ distinct hosts
+Life of a resource request: 470ms for a single request, which translate 80%+ of network latency overhead 
+  - 50ms for DNS
+  - 80ms for TCP handshake
+  - 160ms for SSL handshake
+  - 40ms for request to server
+  - 100ms for server processing
+  - 40ms for response from server
+  latencies: if the server response does not fit into the inital TCP congestion window ( 4 - 15KB ), then one or more additional round-trips latency
+             SSL delays if we need to fetch a missing certificate, which need an entirely new TCP connction
+  User perception of latency
+  0 - 100ms instant
+  100 - 300ms  small perceptible delay
+  300 - 1000ms machine is working
+  1s+  mental context switch
+  10s+ I will come back later
+
+Optimize the latencies in Chrome
+- Multi-process architecture
+  -  process-per-site mode
+- IPC and multi-proc resource loading
+- Resource requests handled by I/O threads , UI and network events do not interfer each other
+- Predictor based DNS, TCP prefection, resource loading, pre-redenering
+
+2. Zotonic
+Web framework to support easy development f real-time web interfaces, long-lived connections and short request
+requirements: (1) dynamically generated pages, template processor; (2) static content, small/large files ( js, css, media assets ); (3) long-lived connections
+
+3. Scalable Web architecture and distributed systems
+- Principles of web distributed system design
+  High availability, performance( fast responses and low latency ), reliability, scalability ( the effort required to increase capacity to handle greater amounts of load, additional traffic, how easy to add more storage capacity, or more transactions ), manageability, cost
+- Basics: core factors ( services, redundancy, partitions, handling failures )
+- Example: image hosting application
+  - no limit to the number of images that will be stored, storage scalability
+  - low latency for image downloads/requests
+  - reliablitlity of the uploaded image
+  - system should be cost-effective
+- Building blocks
+  - scalable data access
+  - caches, global cache, distributed caches
+  - proxies, 
+  - indexes
+  - queues
+  - load balancers
+ 
+ 
+ 

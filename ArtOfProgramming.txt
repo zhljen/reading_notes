@@ -1,0 +1,22 @@
+Vol1
+
+1.1 Algorithms
+1. Euclid's algorithm
+(1) Divide m by n and let r be the reminder
+(2) if r = 0, the algorithm terminates, n is the answer
+(3) set m <- n, n <- r, go back to step (a)
+
+def gcd(a,b):
+    while b:
+        a,b = b, a%b
+    return a
+
+2. The proof of 1 + 3 + ... + ( 2n -1 ) = n^2
+ the geometrical way to proof is interesting
+ -----------------------
+    |   | 5 |  
+ ---------------------- 
+    | 3 |   |
+ ----------------------
+ 1  |   |   |
+ ---------------------
