@@ -1,0 +1,11 @@
+Structuring your project
+http://docs.python-guide.org/en/latest/writing/structure/
+- Structure is key
+ -- modules ( use import statement )
+    keep name short, lowercases, avoid . ?
+    the import modu will look for the proper file, which is modu.py in the same directory as the caller. if not found, python interpreter will search in the "path" recursvely
+    very bad practice: from modu import * ; better: from modu import sqrt; best import modu, x = modu.sqrt
+ -- packages ( any directory with an __init__.py )
+    file modu.py in the directory pack/ is imported by import pack.modu. it will look for __init__.py in pack, execute all the statements, then looks for file named modu.py, execute all the top-level statement. Leaving the __init__.py empty is good.
+    import very.deep.model as mod is good
+
