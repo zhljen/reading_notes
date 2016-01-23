@@ -1,0 +1,38 @@
+AWS design pattern
+- Introduction to AWS
+  -- computing and networking
+     elastic cloud compute(EC2) virtual machines
+     Route 53 DNS provides local and global DNS look-ups
+     virtual private cloud (VPC) isolated cloud networks provide interal networks
+     elastic load balancers (ELB) automatically distributed traffic across EC2 instances
+     auto scaling groups (ASG) provide a way to scale instances up and down on schedules or metrics gathered via cloudwatch from EC2 instances
+  -- Database
+     simpleDB is a highly scalable NoSQL db
+     relational database service (RDS) is a scalable SQL db apart from mysql, oracle, postgresql, sql server
+     elasticcache is an in-memory cache on top of redis or memcached
+  -- storage and content delivery
+     simple storage service (s3) a distributed storage network that crosses data center boundaries with built-in redundancy
+     cloudfront is a cdn that distributed content based on latency or location
+  -- Application services
+     simple queue service ( sqs )
+  -- deployment and management
+     cloudformation is a service that allows the provisioning and updating of AWS resources through templates, usually JSON
+  -- logging
+     CloudWatch can monitor, display, and alert on instance metrics and logs
+
+- Cloud computing service models
+  AWS falls in (PaaS, platform as a service )
+
+- Common problems encountered at AWS
+  underlying hardware failures
+  over-provisioning
+  under-provisioning
+  replication
+  redundancy
+  improving end user experience
+  monitoring and log-gathering
+
+- Basic patterns
+  snapshot pattern
+
+   
